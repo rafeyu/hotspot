@@ -1,0 +1,23 @@
+<%= form_for @hotspot do |f| %>
+	<% if @hotspot.errors.any? %>
+		<div class="notice">
+			Invalid input
+		
+		<ul>
+		<% @hotspot.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+	        </ul>
+	</div>
+<% end %>
+<%= f.label :user %><br/>
+<%= f.text_field :user %><br/>
+
+<%= f.label :price %><br/>
+<%= f.text_field :price %><br/>
+
+<%= f.label :debt %><br/>
+<%= f.text_field :debt %><br/>
+
+<%= f.submit "Create" %>
+<% end %>

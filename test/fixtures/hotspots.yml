@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user: MyString
+  price: 1
+  debt: 1
+  total: 1
+
+two:
+  user: MyString
+  price: 1
+  debt: 1
+  total: 1

@@ -1,0 +1,12 @@
+<% if current_user %>
+	<h1>Update</h1>
+	<%= render 'form' %>
+<% else %>
+	<p>
+	<b>Sorry, no permission for you!</b>
+	Please Login or Signup first.
+	</p>
+<% end %>
+
+<br/>
+<%= link_to 'Back', hotspots_path %>

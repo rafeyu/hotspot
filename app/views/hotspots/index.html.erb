@@ -1,0 +1,41 @@
+<h1>Hotspot</h1>
+	<br />
+<% if @hotspots.blank? %>
+	<p>Still blank</p>
+<% else %>
+	<table border="1">
+	<tr>
+		<th>User</th>	
+		<th>Harga</th>	
+		<th>Utang</th>
+	</tr>
+	<% @hotspots.each do |h| %>
+		<tr>	
+		<td><%= h.user %></td>	
+		<td><%= h.price %></td>	
+		<td><%= h.debt %></td>
+		<td><%= link_to 'Show', h %></td>
+		<% if current_user %>
+		<td><%= link_to 'Update', edit_hotspot_path(h) %></td>
+		<td><%= link_to 'Destroy', h, confirm: 'Sure?', method: :delete %></td>
+		<% else %>
+		<td>Update</td>
+		<td>Destroy</td>
+		<% end %>
+	</tr>
+<% end %>
+<% end %>
+</table>
+
+<br/>
+Total income brutto: <b><%= @hototal %></b>
+<br/>
+Total piutang: <b><%= @hototald %></b>
+<br/>
+Total income netto: <b><%= @income %></b> <span class="notice">(Yang masuk amplop !)</span>
+
+<p>
+<% if current_user %>
+	<%= link_to 'New data', new_hotspot_path%>
+<% end %>
+</p>

@@ -1,0 +1,23 @@
+<%= form_for @user do |f| %>
+		<% if @user.errors.any? %>
+		<div class="notice">
+			Invalid input
+		
+		<ul>
+		<% @user.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+	        </ul>
+	</div>
+<% end %>
+<%= f.label :email %><br/>
+<%= f.text_field :email %><br/>
+<br/>
+<%= f.label :password %><br/>
+<%= f.password_field :password %><br/>
+</br/>
+<%= f.label :password_confirmation %><br/>
+<%= f.password_field :password_confirmation %><br/>
+<br/>
+<%= f.submit %>
+<% end %>

@@ -1,0 +1,19 @@
+
+	<p><%= notice %></p>
+<p>
+  <b>User:</b>
+  <%= @hotspot.user %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @hotspot.price %></p>
+
+<p>
+  <b>Kurangan:</b>
+  <%= @hotspot.debt %>
+</p>
+
+<%= link_to 'Back', hotspots_path %> <% if current_user %> | 
+	<%= link_to 'New data', new_hotspot_path %>
+<% end %>
